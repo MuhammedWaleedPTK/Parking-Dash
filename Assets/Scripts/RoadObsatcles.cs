@@ -16,7 +16,7 @@ public class RoadObsatcles : MonoBehaviour
         if (collision.collider.tag == "Player")
         {
             Debug.Log("Game Over");
-            Handheld.Vibrate();
+            //Handheld.Vibrate();
             gameManager.LevelFailed();
             
         }
