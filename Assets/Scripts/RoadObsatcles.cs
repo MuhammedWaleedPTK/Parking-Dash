@@ -5,11 +5,11 @@ using UnityEngine;
 public class RoadObsatcles : MonoBehaviour
 {
 
-    GameManager gameManager;
+   
 
     private void Start()
     {
-        gameManager= FindObjectOfType<GameManager>();
+       
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -17,7 +17,7 @@ public class RoadObsatcles : MonoBehaviour
         {
             Debug.Log("Game Over");
             //Handheld.Vibrate();
-            gameManager.LevelFailed();
+           GameManager.gameFailedAction?.Invoke();
             
         }
     }

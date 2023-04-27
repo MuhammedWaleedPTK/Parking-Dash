@@ -10,9 +10,9 @@ public class CarSelection : MonoBehaviour
     private int selectionCount = 0;
     public int carsCount = 4;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        UpdateCars(selectionCount);
     }
     public void NextOption()
     {
@@ -34,7 +34,8 @@ public class CarSelection : MonoBehaviour
     }
     private void UpdateCars(int selectionCount)
     {
-        //Cars car = carsInfo.cars[selectionCount];
+        Cars car = carsInfo.cars[selectionCount];
+        carsInfo.currentCarId = selectionCount;
         for(int i = 0; i < carsCount; i++)
         {
             if(i==selectionCount)
@@ -46,15 +47,16 @@ public class CarSelection : MonoBehaviour
                 carsParent.transform.GetChild(i).gameObject.SetActive(false);
             }
         }
+        Debug.Log(car.name);
        
     }
     private void Update()
     {
-         if(Input.GetKeyDown(KeyCode.LeftArrow)) 
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             BackOption();
 
-            Debug.Log("back"+selectionCount+"    slfhj"+ carsInfo.carsCount());
+            Debug.Log("back" + selectionCount + "    slfhj" + carsInfo.carsCount());
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {

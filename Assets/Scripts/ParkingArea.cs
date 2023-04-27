@@ -10,11 +10,11 @@ public class ParkingArea : MonoBehaviour
     public Color color;
     bool allCollidersInside = true;
     public bool isGameWon = false;
-    GameManager gameManager;
+   
 
     private void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        
         parkingMat.color =redColor;
         parkingMat.SetColor("_EmissionColor", redColor);
     }
@@ -49,13 +49,7 @@ public class ParkingArea : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-           
-        }
-    }
+    
     public IEnumerator GameWon()
     {
         yield return new WaitForSeconds(2);
@@ -64,7 +58,7 @@ public class ParkingArea : MonoBehaviour
 
             isGameWon = true;
             Debug.Log("won");
-            gameManager.GameWon();
+            GameManager.gameWonAction?.Invoke();
         } 
 
     }

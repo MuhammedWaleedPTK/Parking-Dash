@@ -7,6 +7,7 @@ using UnityEngine;
 public class CarsInfo:ScriptableObject
 {
     public Cars[] cars;
+    public  int currentCarId;
 
     public int carsCount() { return cars.Length; }
 
@@ -24,6 +25,9 @@ public class Cars
     public string name;
     public int motorPower;
     public int breakPower;
+    public AudioClip engineStartSound;
+    public AudioClip engineIdleSound;
+    public AudioClip engineRunningSound;
     
 
 }

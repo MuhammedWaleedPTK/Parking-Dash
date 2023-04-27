@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,6 +7,13 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static Action gameWonAction;
+    public static Action gameFailedAction;
+    public static Action carFellAction;
+
+    public GameObject needle;
+    public static Action<GameObject> carNeedleAction;
+
     public GameObject gameWonPanel;
     public TextMeshProUGUI gameWonText;
     public bool isGameWon = false;
@@ -16,30 +24,60 @@ public class GameManager : MonoBehaviour
     public GameObject carFellPanel;
     public bool isGameFailed = false;
 
-    Carcontroller carController;
+    public CarsInfo carsInfo;
+    Cars cars;
 
-    public GameObject forwardCamera;
-    public GameObject reverseCamera;
-    public GameObject CockpitCamera;
+    public  string CarName;
+    public  int motorPower;
+    public  int breakPower;
+    public  AudioClip engineStartSound;
+    public  AudioClip engineIdleSound;
+    public  AudioClip engineRunningSound;
+
+    
+
+
+
+
+
     public bool isCockpitOn= false;
-    private void Start()
+    public static Action ToggleCockpitCamAction;
+    private void Awake()
     {
-        carController=FindObjectOfType<Carcontroller>();
-        reverseCamera.SetActive(false);
+        carNeedleAction?.Invoke(needle);
+
+
+       
+      
+
+        cars = carsInfo.cars[carsInfo.currentCarId];
+        CarName = cars.name;
+        motorPower = cars.motorPower;
+        breakPower = cars.breakPower;
+        engineStartSound = cars.engineStartSound;
+        engineIdleSound = cars.engineIdleSound;
+        engineRunningSound = cars.engineRunningSound;
+        
+
+
+    }
+    private void OnEnable()
+    {
+        gameWonAction += GameWon;
+        gameFailedAction += LevelFailed;
+        carFellAction += CarFell;
+
+    }
+    private void OnDisable()
+    {
+        gameWonAction -= GameWon;
+        gameFailedAction -= LevelFailed;
+        carFellAction -= CarFell;
     }
 
     private void Update()
     {
-        if (carController.speed < -1)
-        {
-            reverseCamera.SetActive(true);
-            forwardCamera.SetActive(false);
-        }
-        else
-        {
-            forwardCamera.SetActive(true);
-            reverseCamera.SetActive(false);
-        }
+        
     }
     public void GameWon()
     {
@@ -80,8 +118,7 @@ public class GameManager : MonoBehaviour
     }
     public void CameraSwitch()
     {
-        isCockpitOn = !isCockpitOn;
-        CockpitCamera.SetActive(isCockpitOn);
-        
+       
+        ToggleCockpitCamAction?.Invoke();
     }
 }

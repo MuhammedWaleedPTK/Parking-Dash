@@ -11,23 +11,34 @@ public class CarComponents: MonoBehaviour
 
     public GameObject frontHighBeam;
     public GameObject frontLowBeam;
-    //private bool isLightOn=false;
+   
     private bool isHighLight = false;
     public GameObject LightHightButton;
     public GameObject LightLowButton;
     public Color lightOffColor;
 
-    public float speed;
-    public Carcontroller carController;
+    private float speed;
+    private void OnEnable()
+    {
+        GameManager.carNeedleAction += NeedleAssign;
+    }
+    private void OnDisable()
+    {
+        GameManager.carNeedleAction -= NeedleAssign;
+    }
+    public void NeedleAssign(GameObject needle)
+    {
+        this.needle = needle;
+    }
     private void Start()
     {
-        carController= GetComponent<Carcontroller>();
+        
         frontLowBeam.SetActive(false);
 
     }
     private void Update()
     {
-        speed=carController.speed;
+        speed=Carcontroller.speed;
         UpdateNeedle();
        
     }

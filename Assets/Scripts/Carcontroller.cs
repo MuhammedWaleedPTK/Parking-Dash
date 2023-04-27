@@ -31,7 +31,7 @@ public class Carcontroller : MonoBehaviour
     [SerializeField] private Transform rearLeftWheelTransform;
     [SerializeField] private Transform rearRightWheelTransform;
 
-    [SerializeField] public float speed;
+    [SerializeField] public static float speed;
     [SerializeField] private float speedClamped;
     [SerializeField] private float maxSpeed;
     [SerializeField] private float minSpeed;
@@ -40,20 +40,42 @@ public class Carcontroller : MonoBehaviour
     [SerializeField] private GameObject reverseLight;
     [SerializeField] private GameObject steeringWheel;
 
-    public MyButton myButton;
-    public BrakePedalScript brakePedal;
-    public GameManager gameManager;
+    private MyButton myButton;
+    private BrakePedalScript brakePedal;
+
+
+
+    public GameObject forwardCamera;
+    public GameObject reverseCamera;
+    public GameObject CockpitCamera;
+    public bool isCockpitOn = false;
+
+
+    private void OnEnable()
+    {
+        GameManager.ToggleCockpitCamAction += CameraSwitch;
+        
+
+    }
+    private void OnDisable()
+    {
+        GameManager.ToggleCockpitCamAction-= CameraSwitch;
+    }
+    
 
     private void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
+       myButton=FindObjectOfType<MyButton>();
+       brakePedal=FindObjectOfType<BrakePedalScript>();
+
+        reverseCamera.SetActive(false);
     }
 
     private void FixedUpdate()
     {
         if (centreOfMass.position.y < -5)
         {
-            gameManager.CarFell();
+            GameManager.carFellAction?.Invoke();
         }
         rb.centerOfMass = centreOfMass.transform.localPosition;
         speed = rearLeftWheelCollider.rpm * rearLeftWheelCollider.radius * 2f * Mathf.PI / 10f;
@@ -62,6 +84,7 @@ public class Carcontroller : MonoBehaviour
         HandleMotor();
         HandleSteering();
         UpdateWheels();
+        CameraControlling();
         
         if (isBraking)
         {
@@ -162,5 +185,24 @@ public class Carcontroller : MonoBehaviour
     {
         var gas = Mathf.Clamp(Mathf.Abs( verticalInput), 0.5f, 1f);
         return speedClamped * gas / maxSpeed;
+    }
+    private void CameraControlling()
+    {
+        if (speed < -1)
+        {
+            reverseCamera.SetActive(true);
+            forwardCamera.SetActive(false);
+        }
+        else
+        {
+            forwardCamera.SetActive(true);
+            reverseCamera.SetActive(false);
+        }
+    }
+    public void CameraSwitch()
+    {
+        isCockpitOn = !isCockpitOn;
+        CockpitCamera.SetActive(isCockpitOn);
+
     }
 }

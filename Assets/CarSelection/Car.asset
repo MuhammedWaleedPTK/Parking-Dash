@@ -16,15 +16,31 @@ MonoBehaviour:
   - name: blue
     motorPower: 1000
     breakPower: 100
-  - name: mustang
-    motorPower: 500
-    breakPower: 40
+    engineStartSound: {fileID: 8300000, guid: f90d2412cefca404cba80202baddb8d1, type: 3}
+    engineIdleSound: {fileID: 8300000, guid: 595e65a4e00c2f14caec4adb74d0deea, type: 3}
+    engineRunningSound: {fileID: 8300000, guid: 04ed1fa2b6756584f91329472e2fb21c, type: 3}
   - name: Ish Kdf
-    motorPower: 500
-    breakPower: 40
-  - name: suv
-    motorPower: 500
-    breakPower: 40
+    motorPower: 1000
+    breakPower: 100
+    engineStartSound: {fileID: 8300000, guid: f90d2412cefca404cba80202baddb8d1, type: 3}
+    engineIdleSound: {fileID: 8300000, guid: 595e65a4e00c2f14caec4adb74d0deea, type: 3}
+    engineRunningSound: {fileID: 8300000, guid: 04ed1fa2b6756584f91329472e2fb21c, type: 3}
   - name: Taxi
-    motorPower: 500
-    breakPower: 40
+    motorPower: 1000
+    breakPower: 100
+    engineStartSound: {fileID: 8300000, guid: f90d2412cefca404cba80202baddb8d1, type: 3}
+    engineIdleSound: {fileID: 8300000, guid: 595e65a4e00c2f14caec4adb74d0deea, type: 3}
+    engineRunningSound: {fileID: 8300000, guid: 04ed1fa2b6756584f91329472e2fb21c, type: 3}
+  - name: suv
+    motorPower: 1000
+    breakPower: 100
+    engineStartSound: {fileID: 8300000, guid: f90d2412cefca404cba80202baddb8d1, type: 3}
+    engineIdleSound: {fileID: 8300000, guid: 595e65a4e00c2f14caec4adb74d0deea, type: 3}
+    engineRunningSound: {fileID: 8300000, guid: 04ed1fa2b6756584f91329472e2fb21c, type: 3}
+  - name: mustang
+    motorPower: 1000
+    breakPower: 100
+    engineStartSound: {fileID: 8300000, guid: f90d2412cefca404cba80202baddb8d1, type: 3}
+    engineIdleSound: {fileID: 8300000, guid: 595e65a4e00c2f14caec4adb74d0deea, type: 3}
+    engineRunningSound: {fileID: 8300000, guid: 04ed1fa2b6756584f91329472e2fb21c, type: 3}
+  currentCarId: 1

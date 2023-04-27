@@ -11,7 +11,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject PauseMenuUI;
     public GameObject OtherCanvas;
 
-    public AudioManager audioManager;
+    private AudioManager audioManager;
 
     public TextMeshProUGUI musicText;
     public TextMeshProUGUI soundText;

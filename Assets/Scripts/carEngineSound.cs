@@ -23,12 +23,21 @@ public class carEngineSound : MonoBehaviour
     public bool isEngineRunning = false;
 
     private Carcontroller carController;
+    GameManager gameManager;
 
     private void Start()
     {
+        gameManager= FindObjectOfType<GameManager>();
         carController= GetComponent<Carcontroller>();
         idleSound.volume = 0f;
         runningSound.volume = 0f;
+
+
+        runningSound.clip = gameManager.engineRunningSound;
+        idleSound.clip=gameManager.engineIdleSound;
+        reverseSound.clip = gameManager.engineRunningSound;
+        startingSound.clip = gameManager.engineStartSound;
+        
     }
     private void Update()
     {
