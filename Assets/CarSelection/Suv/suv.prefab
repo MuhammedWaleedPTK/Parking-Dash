@@ -2588,8 +2588,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4404322115897587639}
-  m_LocalRotation: {x: 0.2669336, y: 3.4238033e-15, z: -1.836517e-15, w: 0.96371496}
-  m_LocalPosition: {x: 0, y: 3.0927835, z: -5.154639}
+  m_LocalRotation: {x: 0.26695034, y: -0.000000059604638, z: 0.00000002980141, w: 0.96371025}
+  m_LocalPosition: {x: 0.0000004915847, y: 3.0929627, z: -5.154532}
   m_LocalScale: {x: 1.0309277, y: 1.0309277, z: 1.0309275}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6906,7 +6906,7 @@ GameObject:
   - component: {fileID: 7443363494487898250}
   m_Layer: 0
   m_Name: suv
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

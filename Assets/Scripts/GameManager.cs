@@ -34,8 +34,9 @@ public class GameManager : MonoBehaviour
     public  AudioClip engineIdleSound;
     public  AudioClip engineRunningSound;
 
-    
 
+    public int carsCount=5;
+    public GameObject carsParent;
 
 
 
@@ -44,7 +45,8 @@ public class GameManager : MonoBehaviour
     public static Action ToggleCockpitCamAction;
     private void Awake()
     {
-        carNeedleAction?.Invoke(needle);
+        //carNeedleAction?.Invoke(needle);
+        //Debug.Log("needl1");
 
 
        
@@ -73,6 +75,22 @@ public class GameManager : MonoBehaviour
         gameWonAction -= GameWon;
         gameFailedAction -= LevelFailed;
         carFellAction -= CarFell;
+    }
+    private void Start()
+    {
+        carsParent = GameObject.Find("CarsParent");
+        carNeedleAction?.Invoke(needle);
+        for (int i = 0; i < carsCount; i++)
+        {
+            if (i == PlayerPrefs.GetInt("currentCarId",0))
+            {
+                carsParent.transform.GetChild(i).gameObject.SetActive(true);
+            }
+            else
+            {
+                carsParent.transform.GetChild(i).gameObject.SetActive(false);
+            }
+        }
     }
 
     private void Update()

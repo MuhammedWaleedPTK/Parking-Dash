@@ -1,17 +1,26 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CarSelection : MonoBehaviour
 {
     public GameObject carsParent;
     public CarsInfo carsInfo;
-    private int selectionCount = 0;
+    private int selectionCount;
     public int carsCount = 4;
+
+
+    public TextMeshProUGUI carNameText;
+    public TextMeshProUGUI selectButtonText;
+
+
     // Start is called before the first frame update
     void Awake()
     {
+        selectionCount = carsInfo.currentCarId;
         UpdateCars(selectionCount);
     }
     public void NextOption()
@@ -35,7 +44,16 @@ public class CarSelection : MonoBehaviour
     private void UpdateCars(int selectionCount)
     {
         Cars car = carsInfo.cars[selectionCount];
-        carsInfo.currentCarId = selectionCount;
+        if (selectionCount == PlayerPrefs.GetInt("currentCarId")) 
+        {
+            selectButtonText.text = "SELECTED";
+        }
+        else
+        {
+            selectButtonText.text = "SELECT";
+        }
+      
+        carNameText.text = car.name;
         for(int i = 0; i < carsCount; i++)
         {
             if(i==selectionCount)
@@ -50,6 +68,18 @@ public class CarSelection : MonoBehaviour
         Debug.Log(car.name);
        
     }
+
+    public void SelectCar()
+    {
+        carsInfo.currentCarId = selectionCount;
+        PlayerPrefs.SetInt("currentCarId", selectionCount);
+        selectButtonText.text = "SELECTED";
+    }
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))

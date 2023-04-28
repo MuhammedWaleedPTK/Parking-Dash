@@ -47,6 +47,10 @@ public class MenuManager : MonoBehaviour
         menuPanel.SetActive(false);
         modePanel.SetActive(true);
     }
+    public void CarSelection()
+    {
+        SceneManager.LoadScene("CarSelection");
+    }
     public void Quit()
     {
         Application.Quit();

@@ -825,6 +825,15 @@ MonoBehaviour:
   gameFailedPanel: {fileID: 1299435553874232337}
   carFellPanel: {fileID: 4016969992899942112}
   isGameFailed: 0
+  carsInfo: {fileID: 0}
+  CarName: 
+  motorPower: 0
+  breakPower: 0
+  engineStartSound: {fileID: 0}
+  engineIdleSound: {fileID: 0}
+  engineRunningSound: {fileID: 0}
+  carsCount: 5
+  carsParent: {fileID: 0}
   isCockpitOn: 0
 --- !u!1 &1299435552716707511
 GameObject:
@@ -3155,7 +3164,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ef969ab40a179234bb45ef113de72605, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 24779d09a082f8d48a37db10f952473e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.25
   m_Pitch: 0.75

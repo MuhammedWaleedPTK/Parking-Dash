@@ -21,14 +21,18 @@ public class CarComponents: MonoBehaviour
     private void OnEnable()
     {
         GameManager.carNeedleAction += NeedleAssign;
+       
     }
     private void OnDisable()
     {
         GameManager.carNeedleAction -= NeedleAssign;
+       
     }
     public void NeedleAssign(GameObject needle)
     {
+        
         this.needle = needle;
+       
     }
     private void Start()
     {
