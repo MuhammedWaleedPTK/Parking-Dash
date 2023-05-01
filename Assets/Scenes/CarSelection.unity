@@ -147,7 +147,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115690461}
-  m_LocalRotation: {x: 0.085883595, y: -0, z: -0, w: 0.99630517}
+  m_LocalRotation: {x: 0.085883595, y: -8.5665845e-24, z: 8.610055e-25, w: 0.99630517}
   m_LocalPosition: {x: 0, y: 0, z: -0.0000010421157}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1183,12 +1183,12 @@ MonoBehaviour:
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 1
-  m_colorMode: 3
+  m_colorMode: 0
   m_fontColorGradient:
     topLeft: {r: 0.27735847, g: 1, b: 0.9472527, a: 1}
-    topRight: {r: 0, g: 0, b: 0, a: 1}
-    bottomLeft: {r: 0, g: 0, b: 0, a: 1}
-    bottomRight: {r: 0, g: 0.97029257, b: 1, a: 1}
+    topRight: {r: 0.27735847, g: 1, b: 0.9472527, a: 1}
+    bottomLeft: {r: 0.27735847, g: 1, b: 0.9472527, a: 1}
+    bottomRight: {r: 0.27735847, g: 1, b: 0.9472527, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -1272,7 +1272,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1067505835}
-  m_LocalRotation: {x: 0.06779503, y: 1e-45, z: -0, w: 0.99769926}
+  m_LocalRotation: {x: 0.06779503, y: -4.6397e-41, z: -4.19497e-40, w: 0.99769926}
   m_LocalPosition: {x: 0, y: 0, z: -0.0000010421157}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1591,7 +1591,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317648401}
-  m_LocalRotation: {x: 0.08588358, y: 0, z: 0, w: 0.99630517}
+  m_LocalRotation: {x: 0.08588358, y: -8.555942e-24, z: 7.3754003e-25, w: 0.99630517}
   m_LocalPosition: {x: 0, y: 1.14, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2509,7 +2509,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630997164}
-  m_LocalRotation: {x: 0.103991665, y: -1e-45, z: -0, w: 0.9945782}
+  m_LocalRotation: {x: 0.10399166, y: -0.000000009159492, z: 9.577031e-10, w: 0.9945782}
   m_LocalPosition: {x: 0, y: 0, z: -0.0000020842315}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2671,7 +2671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.5254902, b: 0.5411765, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

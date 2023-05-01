@@ -756,6 +756,39 @@ Transform:
   m_Father: {fileID: 148433069682566801}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2870789254980826660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4338668256741829448}
+  m_Layer: 0
+  m_Name: FrontLights
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4338668256741829448
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2870789254980826660}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6818542394393888099}
+  - {fileID: 6818542393906259658}
+  m_Father: {fileID: 6943201593523446143}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3127317041143068593
 GameObject:
   m_ObjectHideFlags: 0
@@ -2187,7 +2220,7 @@ Transform:
   m_Children:
   - {fileID: 6818542394325789023}
   m_Father: {fileID: 6943201593523446143}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6818542392478474088
 MonoBehaviour:
@@ -2640,7 +2673,7 @@ Transform:
   m_Children:
   - {fileID: 6818542393069300690}
   m_Father: {fileID: 6943201593523446143}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 3.32, y: 26.843, z: 1.679}
 --- !u!114 &6818542392857427035
 MonoBehaviour:
@@ -3026,7 +3059,7 @@ Transform:
   m_Children:
   - {fileID: 6818542392575205980}
   m_Father: {fileID: 6943201593523446143}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6818542393087503319
 MonoBehaviour:
@@ -4450,15 +4483,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6818542393906259659}
-  m_LocalRotation: {x: -0.000017414575, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0001, y: 0.005274038, z: 0.022626858}
-  m_LocalScale: {x: 0.009587727, y: 0.009587727, z: 0.009587727}
+  m_LocalRotation: {x: -0.000017414577, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00009999178, y: 0.005274038, z: 0.022626787}
+  m_LocalScale: {x: 0.009587726, y: 0.009587727, z: 0.009587726}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6818542393410988224}
   - {fileID: 6818542393730631091}
-  m_Father: {fileID: 6943201593523446143}
-  m_RootOrder: 13
+  m_Father: {fileID: 4338668256741829448}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6818542394083485381
 GameObject:
@@ -4929,15 +4962,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6818542394393888100}
-  m_LocalRotation: {x: -0.000017414575, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.00042, y: 0.00523, z: 0.01872}
-  m_LocalScale: {x: 0.009587727, y: 0.009587727, z: 0.009587727}
+  m_LocalRotation: {x: -0.000017414577, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0004200167, y: 0.0052299993, z: 0.018720066}
+  m_LocalScale: {x: 0.009587726, y: 0.009587727, z: 0.009587726}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6818542392514917698}
   - {fileID: 6818542393405711042}
-  m_Father: {fileID: 6943201593523446143}
-  m_RootOrder: 12
+  m_Father: {fileID: 4338668256741829448}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6818542394447583200
 GameObject:
@@ -5474,8 +5507,7 @@ Transform:
   - {fileID: 6818542393173793427}
   - {fileID: 6818542394270431198}
   - {fileID: 6818542393159051643}
-  - {fileID: 6818542394393888099}
-  - {fileID: 6818542393906259658}
+  - {fileID: 4338668256741829448}
   - {fileID: 6818542392478474087}
   - {fileID: 6818542393087503318}
   - {fileID: 6818542392857427034}
@@ -5589,10 +5621,11 @@ MonoBehaviour:
   startingPos: 135
   endPos: -134
   desiredPos: 0
+  frontLights: {fileID: 0}
+  brakeLight: {fileID: 0}
   frontHighBeam: {fileID: 6818542394393888100}
   frontLowBeam: {fileID: 6818542393906259659}
-  LightHightButton: {fileID: 0}
-  LightLowButton: {fileID: 0}
+  isHighLight: 0
   lightOffColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7777681241674057852
 GameObject:

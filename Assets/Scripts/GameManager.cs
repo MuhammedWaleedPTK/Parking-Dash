@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
         {
             uiCanvas.SetActive(false);
             gameWonPanel.SetActive(true);
-            gameWonText.text = "LEVEL " +( SceneManager.GetActiveScene().buildIndex-1)+ " COMPLETED";
+            gameWonText.text = "LEVEL " +( SceneManager.GetActiveScene().buildIndex-2)+ " COMPLETED";
         }
        
     }

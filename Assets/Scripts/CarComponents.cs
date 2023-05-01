@@ -9,23 +9,27 @@ public class CarComponents: MonoBehaviour
     public float startingPos = -90f, endPos = 90f;
     public float desiredPos;
 
+    public GameObject frontLights;
+    public GameObject brakeLight;
+
     public GameObject frontHighBeam;
     public GameObject frontLowBeam;
    
-    private bool isHighLight = false;
-    public GameObject LightHightButton;
-    public GameObject LightLowButton;
+    public bool isHighLight = false;
+    
     public Color lightOffColor;
 
     private float speed;
     private void OnEnable()
     {
         GameManager.carNeedleAction += NeedleAssign;
+        FreeDrive.carLightAction += ToggleCarLight;
        
     }
     private void OnDisable()
     {
         GameManager.carNeedleAction -= NeedleAssign;
+        FreeDrive.carLightAction -= ToggleCarLight;
        
     }
     public void NeedleAssign(GameObject needle)
@@ -76,8 +80,14 @@ public class CarComponents: MonoBehaviour
         isHighLight=!isHighLight;
         frontHighBeam.SetActive(!isHighLight);
         frontLowBeam.SetActive(isHighLight);
-        LightLowButton.SetActive(isHighLight);
-        LightHightButton.SetActive(!isHighLight);
+        //LightLowButton.SetActive(isHighLight);
+        //LightHightButton.SetActive(!isHighLight);
 
     }
+    private void ToggleCarLight(bool isDay)
+    {
+        frontLights.SetActive(!isDay);
+        brakeLight.SetActive(!isDay);
+    }
+
 }
