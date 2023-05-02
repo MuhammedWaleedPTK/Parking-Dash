@@ -17,6 +17,7 @@ public class MenuManager : MonoBehaviour
     {
         levelPanel.SetActive(false);
         modePanel.SetActive(false);
+        
     }
     public void GamePlay()
     {

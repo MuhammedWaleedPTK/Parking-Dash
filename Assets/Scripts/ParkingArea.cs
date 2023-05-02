@@ -57,7 +57,7 @@ public class ParkingArea : MonoBehaviour
         {
 
             isGameWon = true;
-            Debug.Log("won");
+            
             GameManager.gameWonAction?.Invoke();
         } 
 

@@ -69,6 +69,8 @@ public class Carcontroller : MonoBehaviour
        brakePedal=FindObjectOfType<BrakePedalScript>();
 
         reverseCamera.SetActive(false);
+        motorForce = GameManager.motorPower;
+        brakForce = GameManager.brakePower;
     }
 
     private void FixedUpdate()

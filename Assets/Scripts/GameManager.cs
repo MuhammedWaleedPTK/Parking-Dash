@@ -28,8 +28,8 @@ public class GameManager : MonoBehaviour
     Cars cars;
 
     public  string CarName;
-    public  int motorPower;
-    public  int breakPower;
+    public static int motorPower;
+    public static  int brakePower;
     public  AudioClip engineStartSound;
     public  AudioClip engineIdleSound;
     public  AudioClip engineRunningSound;
@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
 
     public int carsCount=5;
     public GameObject carsParent;
+
+    private int unlockedLevels;
 
 
 
@@ -55,7 +57,7 @@ public class GameManager : MonoBehaviour
         cars = carsInfo.cars[carsInfo.currentCarId];
         CarName = cars.name;
         motorPower = cars.motorPower;
-        breakPower = cars.breakPower;
+        brakePower = cars.breakPower;
         engineStartSound = cars.engineStartSound;
         engineIdleSound = cars.engineIdleSound;
         engineRunningSound = cars.engineRunningSound;
@@ -78,6 +80,8 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        unlockedLevels = PlayerPrefs.GetInt("unlockedLevels", 0);
+
         carsParent = GameObject.Find("CarsParent");
         carNeedleAction?.Invoke(needle);
         for (int i = 0; i < carsCount; i++)
@@ -93,10 +97,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        
-    }
+   
     public void GameWon()
     {
         isGameWon= true;
@@ -106,6 +107,7 @@ public class GameManager : MonoBehaviour
             gameWonPanel.SetActive(true);
             gameWonText.text = "LEVEL " +( SceneManager.GetActiveScene().buildIndex-2)+ " COMPLETED";
         }
+        PlayerPrefs.SetInt("unlockedLevels",SceneManager.GetActiveScene().buildIndex-1);
        
     }
     public void LevelFailed()
